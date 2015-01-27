@@ -16,7 +16,7 @@ export default Ember.ArrayController.extend({
   actions: {
 	createTodo: function() {
 	  var controller = this;
-	  this.get('todo').save().then(function(todo) {
+	  this.get('todo').save().then(function() {
 		controller.set('todo', controller.store.createRecord('todo', {
 		  isCompleted: false
 		}));
