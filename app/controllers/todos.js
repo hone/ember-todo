@@ -1,22 +1,25 @@
 import Ember from 'ember';
 
 export default Ember.ArrayController.extend({
-  todoCount: Ember.computed.alias("model.length"),
+  todos: function() {
+	return this.get('model').filterBy('isNew', false);
+  }.property('model.length'),
+  todoCount: Ember.computed.alias("todos.length"),
   completedCount: function() {
-	return this.get("model").filterBy("isCompleted").get("length");
+	return this.get("todos").filterBy("isCompleted").get("length");
   }.property("@each.isCompleted"),
-  newTitle: "",
+  todo: function() {
+	return this.store.createRecord('todo', {
+	  isCompleted: false
+	});
+  }.property(),
   actions: {
 	createTodo: function() {
-	  var title = this.get('newTitle');
-	  var todo = this.store.createRecord('todo', {
-		title: title,
-		isCompleted: false
-	  });
-
 	  var controller = this;
-	  todo.save().then(function(todo) {
-		controller.set('newTitle', '');
+	  this.get('todo').save().then(function(todo) {
+		controller.set('todo', controller.store.createRecord('todo', {
+		  isCompleted: false
+		}));
 	  });
 	}
   }
