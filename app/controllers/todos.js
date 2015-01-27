@@ -21,6 +21,9 @@ export default Ember.ArrayController.extend({
 		  isCompleted: false
 		}));
 	  });
+	},
+	deleteTodo: function(todo) {
+	  todo.destroyRecord();
 	}
   }
 });

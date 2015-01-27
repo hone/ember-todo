@@ -9,7 +9,7 @@
       {{#each todos itemController="todo"}}
       <li {{bind-attr class="isCompleted:completed" }}>
         {{input type="checkbox" class="toggle" checked=isCompleted}}
-        <label>{{title}}</label><button class="destroy"></button>
+        <label>{{title}}</label><button {{action "deleteTodo" this}} class="destroy"></button>
       </li>
       {{/each}}
     </ul>
