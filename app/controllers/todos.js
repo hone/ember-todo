@@ -1,12 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.ArrayController.extend({
-  todos: function() {
-	return this.get('model').filterBy('isNew', false);
-  }.property('model.length'),
-  todoCount: Ember.computed.alias("todos.length"),
+  todoCount: Ember.computed.alias("model.length"),
   completedTodos: function() {
-	return this.get("todos").filterBy("isCompleted");
+	return this.get("model").filterBy("isCompleted");
   }.property("@each.isCompleted"),
   completedCount: function() {
 	return this.get("completedTodos").get("length");
