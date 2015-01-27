@@ -10,5 +10,11 @@ export default Ember.ObjectController.extend({
 	  model.set('isCompleted', value);
 	  model.save();
 	}
-  }.property('model.isCompleted')
+  }.property('model.isCompleted'),
+
+  actions: {
+	deleteTodo: function(todo) {
+	  todo.destroyRecord();
+	}
+  }
 });
