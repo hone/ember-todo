@@ -13,6 +13,18 @@ export default Ember.ArrayController.extend({
 	  isCompleted: false
 	});
   }.property(),
+  allCompleted: function(key, value) {
+	if (value === undefined) {
+	  return this.get("completedCount") == this.get("model").get("length");
+	} else {
+	  this.get("model").forEach(function(todo) {
+		todo.set("isCompleted", value);
+		todo.save();
+	  });
+	  return value;
+	}
+  }.property("@each.isCompleted"),
+
   actions: {
 	createTodo: function() {
 	  var controller = this;
