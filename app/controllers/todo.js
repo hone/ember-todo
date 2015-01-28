@@ -11,10 +11,21 @@ export default Ember.ObjectController.extend({
 	  model.save();
 	}
   }.property('model.isCompleted'),
+  isEditing: false,
 
   actions: {
 	deleteTodo: function(todo) {
 	  todo.destroyRecord();
+	},
+	editTodo: function() {
+	  this.set('isEditing', true);
+	},
+	completeEdit: function() {
+	  var controller = this;
+
+	  this.get('model').save().then(function() {
+		controller.set('isEditing', false);
+	  });
 	}
   }
 });
