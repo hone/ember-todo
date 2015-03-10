@@ -8,7 +8,7 @@
     "test": "tests"
   },
   "scripts": {
-    "start": "ember fastboot",
+    "start": "npm link ember-cli;ember fastboot",
     "build": "ember build",
     "test": "ember test",
     "postinstall": "bower install"
