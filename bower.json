@@ -13,5 +13,8 @@
     "ember-qunit-notifications": "0.0.7",
     "qunit": "~1.17.1",
     "handlebars": "~2.0.0"
+  },
+  "resolutions": {
+    "ember": "canary"
   }
 }
