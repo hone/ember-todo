@@ -13,8 +13,4 @@ var App = Ember.Application.extend({
 
 loadInitializers(App, config.modulePrefix);
 
-$(function() {
-  $('.ember-view').remove();
-});
-
 export default App;
