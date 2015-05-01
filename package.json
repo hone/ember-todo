@@ -17,7 +17,7 @@
   "engines": {
     "node": ">= 0.10.0"
   },
-  "cache_directories": [
+  "cacheDirectories": [
     "node_modules",
     "bower_components"
   ],
