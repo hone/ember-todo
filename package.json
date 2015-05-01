@@ -8,7 +8,7 @@
     "test": "tests"
   },
   "scripts": {
-    "start": "ember fastboot -port $PORT --build false",
+    "start": "ember fastboot -port $PORT --serve-assets",
     "build": "ember build",
     "test": "ember test",
     "postinstall": "bower install;ember build --environment production"
