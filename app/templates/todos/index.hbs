@@ -1,5 +1,5 @@
 <ul id="todo-list">
-  {{#each todo in model}}
+  {{#each model as |todo|}}
     {{todo-item todo=todo}}
   {{/each}}
 </ul>
