@@ -1,3 +1,3 @@
 ---
-- mount: '/api/'
+- mount_point: '/api/'
   url: 'https://hone-ember-todo-rails.herokuapp.com/'
