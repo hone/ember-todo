@@ -1,5 +1,5 @@
 import DS from 'ember-data';
 
 export default DS.RESTAdapter.extend({
-  host: "https://limitless-caverns-5032.herokuapp.com/api/"
+  host: "https://infinite-dawn-1898.herokuapp.com/api/"
 });
