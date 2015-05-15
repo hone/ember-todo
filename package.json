@@ -11,7 +11,7 @@
     "start": "ember server",
     "build": "ember build",
     "test": "ember test",
-    "postinstall": "bower install && ember build --output-path=public_html/ --environment=production"
+    "postinstall": "bower install && ember build --output-path=public_html/ --environment=development"
   },
   "repository": "",
   "engines": {
