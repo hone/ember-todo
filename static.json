@@ -1,5 +1,8 @@
 {
   "root": "dist",
+  "routes": {
+    "/*": "index.html"
+  },
   "proxies": {
     "/api/": {
       "origin": "https://hone-ember-todo-rails.herokuapp.com/"
