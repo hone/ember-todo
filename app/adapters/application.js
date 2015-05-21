@@ -1,5 +1,6 @@
 import DS from 'ember-data';
+import ENV from 'todo/config/environment';
 
 export default DS.ActiveModelAdapter.extend({
-  host: "https://infinite-dawn-1898.herokuapp.com/api/"
+  host: ENV.API_URL
 });
